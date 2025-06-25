@@ -15,6 +15,7 @@ TODO.txt
 *.userprefs
 
 # Build results
+/_build/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -251,3 +252,4 @@ wdir/*.ncp
 wdir/*.exe
 wdir/icons/*.db
 wdir/nc.ini
+nc.ini

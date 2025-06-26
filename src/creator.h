@@ -18,6 +18,8 @@
 #include <nana/gui/widgets/label.hpp>
 
 //<*includes
+#include "config.h"
+#include "imagemanager.h"
 #include "nana_extra/adi_place.hpp"
 //*>
 
@@ -47,6 +49,8 @@ public:
 private:
 	void init_()
 	{
+		extern imagemanager    g_img_mgr;
+
 		place_.bind(*this);
 		place_.div("vert arrange=[36,variable,24] _field_");
 		caption("Nana Creator");
@@ -57,17 +61,17 @@ private:
 		place_["_field_"] << _tb;
 		_tb.bgcolor(nana::color(204,213,240));
 		_tb.tools_height(26);
-		_tb.append(nana::toolbar::tools::button, "New project", nana::paint::image("icons/new_prj.png"));
-		_tb.append(nana::toolbar::tools::button, "Load project", nana::paint::image("icons/load_prj.png"));
-		_tb.append(nana::toolbar::tools::button, "Save project", nana::paint::image("icons/save.png"));
-		_tb.append(nana::toolbar::tools::button, "Save project as...", nana::paint::image("icons/save_as.png"));
+		_tb.append(nana::toolbar::tools::button, "New project", nana::paint::image(g_img_mgr.path(GUI_NEWPRJ)));
+		_tb.append(nana::toolbar::tools::button, "Load project", nana::paint::image(g_img_mgr.path(GUI_LOADPRJ));
+		_tb.append(nana::toolbar::tools::button, "Save project", nana::paint::image(g_mgr_mgr.path(GUI_SAVE)));
+		_tb.append(nana::toolbar::tools::button, "Save project as...", nana::paint::image(g_mgr_img(GUI_SAVEAS));
 		_tb.append_separator();
 		_tb.append(nana::toolbar::tools::button, "Undo", nana::paint::image("icons/undo.png"));
 		_tb.append(nana::toolbar::tools::button, "Redo", nana::paint::image("icons/redo.png"));
 		_tb.append_separator();
-		_tb.append(nana::toolbar::tools::button, "Generate code", nana::paint::image("icons/output.png")).textout(true);
+		_tb.append(nana::toolbar::tools::button, "Generate code", nana::paint::image(g_img_mgr.path(GUI_OUTPUT))).textout(true);
 		_tb.append_separator();
-		_tb.append(nana::toolbar::tools::button, "Delete current selection", nana::paint::image("icons/delete.png"));
+		_tb.append(nana::toolbar::tools::button, "Delete current selection", nana::paint::image(g_img_mgr.path(GUI_DELETE)));
 		_tb.append_separator();
 		_tb.append(nana::toolbar::tools::button, "Move up current selection", nana::paint::image("icons/up.png"));
 		_tb.append(nana::toolbar::tools::button, "Move down current selection", nana::paint::image("icons/down.png"));

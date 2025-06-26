@@ -72,14 +72,14 @@ guimanager::guimanager(nana::window wd)
 	{
 		moveupselected();
 	});
-	nana::paint::image _img_up("icons/up.png");
+	nana::paint::image _img_up(g_img_mgr.path(GUI_UP));
 	_ctxmenu.image(0, _img_up);
 	// move down
 	_ctxmenu.append("Move down", [this](const nana::menu::item_proxy& ip)
 	{
 		movedownselected();
 	});
-	nana::paint::image _img_down("icons/down.png");
+	nana::paint::image _img_down(g_img_mgr.path(GUI_DOWN));
 	_ctxmenu.image(1, _img_down);
 	// move into
 	_ctxmenu.append("Move into");
@@ -88,17 +88,17 @@ guimanager::guimanager(nana::window wd)
 		{
 			moveintofield();
 		});
-	sub_move_into->image(0, nana::paint::image("icons/horizontal_layout.png"));
+	sub_move_into->image(0, nana::paint::image(g_img_mgr.path(CTRL_FIELD)));
 	sub_move_into->append("grid", [this](const nana::menu::item_proxy& ip)
 		{
 			moveintogrid();
 		});
-	sub_move_into->image(1, nana::paint::image("icons/grid_layout.png"));
+	sub_move_into->image(1, nana::paint::image(g_img_mgr.path(CTRL_GRID)));
 	sub_move_into->append("panel", [this](const nana::menu::item_proxy& ip)
 		{
 			moveintopanel();
 		});
-	sub_move_into->image(2, nana::paint::image("icons/panel.png"));
+	sub_move_into->image(2, nana::paint::image(g_img_mgr.path(CTRL_PANEL)));
 	// -----
 	_ctxmenu.append_splitter();
 	// delete
@@ -106,7 +106,7 @@ guimanager::guimanager(nana::window wd)
 		{
 			deleteselected();
 		});
-	nana::paint::image _img_del("icons/delete.png");
+	nana::paint::image _img_del(g_img_mgr.path(GUI_DELETE));
 	_ctxmenu.image(4, _img_del);
 	// -----
 	_ctxmenu.append_splitter();
@@ -115,21 +115,21 @@ guimanager::guimanager(nana::window wd)
 		{
 			copyselected(true);
 		});
-	nana::paint::image _img_cut("icons/cut.png");
+	nana::paint::image _img_cut(g_img_mgr.path(GUI_CUT));
 	_ctxmenu.image(6, _img_cut);
 	// copy
 	_ctxmenu.append("Copy", [this](const nana::menu::item_proxy& ip)
 		{
 			copyselected();
 		});
-	nana::paint::image _img_copy("icons/copy.png");
+	nana::paint::image _img_copy(g_img_mgr.path(GUI_COPY));
 	_ctxmenu.image(7, _img_copy);
 	// paste
 	_ctxmenu.append("Paste", [this](const nana::menu::item_proxy& ip)
 		{
 			pasteselected();
 		});
-	nana::paint::image _img_paste("icons/paste.png");
+	nana::paint::image _img_paste(g_img_mgr.path(GUI_PASTE));
 	_ctxmenu.image(8, _img_paste);
 }
 

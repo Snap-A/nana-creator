@@ -60,7 +60,24 @@ inifile		g_inifile;
 	g_img_mgr.add(CTRL_NOTEBOOK, "icons/notebook.png");
 	g_img_mgr.add(CTRL_PAGE, "icons/page.png");
 	g_img_mgr.add(CTRL_CUSTOM, "icons/custom.png");
+        // Icon
 	g_img_mgr.add(CTRL_CREATOR, "icons/creator.ico");
+        // GUI menubar
+        g_img_mgr.add(GUI_NEWPRJ, "icons/new_prj.png");
+        g_img_mgr.add(GUI_LOADPRJ, "icons/load_prj.png");
+        g_img_mgr.add(GUI_SAVE, "icons/save.png");
+        g_img_mgr.add(GUI_SAVEAS, "icons/save_as.png");
+        g_img_mgr.add(GUI_OUTPUT, "icons/output.png");
+        g_img_mgr.add(GUI_UP, "icons/up.png");
+        g_img_mgr.add(GUI_DOWN, "icons/down.png");
+        g_img_mgr.add(GUI_DELETE, "icons/delete.png");
+        g_img_mgr.add(GUI_CUT, "icons/cut.png");
+        g_img_mgr.add(GUI_COPY, "icons/copy.png");
+        g_img_mgr.add(GUI_PASTE, "icons/paste.png");
+        g_img_mgr.add(GUI_INFO, "icons/info.png");
+        g_img_mgr.add(GUI_ITEM_ADD, "icons/item_add.png");
+        g_img_mgr.add(GUI_SEP_ADD, "icons/sep_add.png");
+        g_img_mgr.add(GUI_NC, "icons/nc.png");
 
         for (int i=0; i < 4; ++i) {
 		std::string test_base = BASE[i];

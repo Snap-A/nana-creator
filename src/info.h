@@ -21,6 +21,8 @@
 #include <nana/gui/widgets/button.hpp>
 
 //<*includes
+#include "config.h"
+#include "imagemanager.h"
 //*>
 
 
@@ -49,6 +51,8 @@ public:
 private:
 	void init_()
 	{
+		extern imagemanager    g_img_mgr;
+
 		place_.bind(*this);
 		place_.div("vert <weight=150 arrange=[50%,variable] field1><vert weight=30 margin=5 gap=2 arrange=[20] field2><grid=[5,6] margin=[5,10,5,10] collapse(1,0,4,1) collapse(1,1,4,1) collapse(0,2,5,4) grid1><weight=36 margin=[0,10,10,10] gap=2 arrange=[variable,90] field3>");
 		caption("About Nana Creator");
@@ -57,7 +61,7 @@ private:
 		// picture1
 		picture1.create(*this);
 		place_["field1"] << picture1;
-		picture1.load(nana::paint::image("icons/nc.png"));
+		picture1.load(nana::paint::image(g_img_mgr.path(GUI_NC)));
 		picture1.align(static_cast<nana::align>(1), static_cast<nana::align_v>(1));
 		picture1.set_gradual_background(nana::color(255,255,255), nana::color(93,107,153), true);
 		// panel1

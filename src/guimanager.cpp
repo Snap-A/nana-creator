@@ -33,6 +33,7 @@
 #include "ctrls/page.h"
 #include "ctrls/custom.h"
 #include "guimanager.h"
+#include "imagemanager.h"
 #include "lock_guard.h"
 #include "style.h"
 #include "inifile.h"
@@ -42,8 +43,8 @@ extern inifile			g_inifile;
 
 
 // strings to check in validation rule
+extern imagemanager		g_img_mgr;
 std::vector<std::string> invalid_names_ending{ INVALID_NAMES_ENDING };
-
 
 //guimanager
 guimanager::guimanager(nana::window wd)

@@ -53,6 +53,8 @@
 //
 #define CTRL_CUSTOM				"custom"
 
+#define CTRL_CREATOR				"creator"
+
 
 // project file
 //--------------------------------------------------------

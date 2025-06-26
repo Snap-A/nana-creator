@@ -12,10 +12,16 @@
 #include "inifile.h"
 #include "creator.h"
 
+static std::string BASE[] = {
+   "/usr/share/nana-creator",
+   "/usr/local/nana-creator",
+   "/usr/local/share/nana-creator",
+   "./wdir"
+};
 
 imagemanager	g_img_mgr;
-filemanager		g_file_mgr;	// manage absolute and relative path
-inifile			g_inifile;
+filemanager	g_file_mgr;	// manage absolute and relative path
+inifile		g_inifile;
 
 
 #ifdef NANA_WINDOWS
@@ -54,10 +60,17 @@ inifile			g_inifile;
 	g_img_mgr.add(CTRL_NOTEBOOK, "icons/notebook.png");
 	g_img_mgr.add(CTRL_PAGE, "icons/page.png");
 	g_img_mgr.add(CTRL_CUSTOM, "icons/custom.png");
+	g_img_mgr.add(CTRL_CREATOR, "icons/creator.ico");
 
-
+        for (int i=0; i < 4; ++i) {
+		std::string test_base = BASE[i];
+		if(file_exists(test_base + "/" + g_img_mgr.path(CTRL_CREATOR))) {
+			g_img_mgr.sethome(test_base + "/");
+                        break;
+		}
+	}
 	creator fm(0, nana::size{ 1200, 700 });
-	fm.icon(nana::paint::image("icons/creator.ico"));
+	fm.icon(nana::paint::image(g_img_mgr.path(CTRL_CREATOR)));
 
 	fm.show();
 	nana::exec();

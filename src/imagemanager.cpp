@@ -16,6 +16,11 @@ imagemanager::~imagemanager()
 	clear();
 }
 
+void imagemanager::sethome(const std::string& name)
+{
+	_homedir = name;
+}
+
 bool imagemanager::add(const std::string& name, const std::string& path)
 {
 	if(name.empty() || path.empty())
@@ -62,6 +67,8 @@ std::string imagemanager::path(unsigned pos)
 {
 	if(pos >= _list.size())
 		return "";
+	if (!_homedir.empty())
+        	return _homedir+_list[pos].path;
 
 	return _list[pos].path;
 }
@@ -75,6 +82,9 @@ std::string imagemanager::path(const std::string& name)
 	{
 		if(it->name == name)
 		{
+			if (!_homedir.empty())
+		        	return _homedir+it->path;
+
 			return it->path;
 		}
 	}

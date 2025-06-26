@@ -33,10 +33,11 @@
 #include "ctrls/page.h"
 #include "ctrls/custom.h"
 #include "guimanager.h"
+#include "imagemanager.h"
 #include "lock_guard.h"
 #include "style.h"
 
-
+extern imagemanager		g_img_mgr;
 
 //guimanager
 guimanager::guimanager(nana::window wd)

@@ -18,6 +18,7 @@ public:
 	imagemanager() = default;
 	~imagemanager();
 
+	void sethome(const std::string& path);
 	bool add(const std::string& name, const std::string& path);
 	bool remove(const std::string& name);
 
@@ -28,6 +29,8 @@ public:
 	void clear() { _list.clear(); }
 
 private:
+	std::string _homedir;
+
 	struct _img
 	{
 		std::string name;

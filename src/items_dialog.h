@@ -22,6 +22,8 @@
 #include "ctrls/property.h"
 #include "nana_extra/propertygrid.h"
 #include "namemanager.h"
+#include "config.h"
+#include "imagemanager.h"
 //*>
 
 
@@ -50,6 +52,8 @@ public:
 private:
 	void init_()
 	{
+		extern imagemanager    g_img_mgr;
+
 		_place.div("vert margin=5 <<vert margin=3 gap=2 arrange=[variable,30] left_lyt>|<margin=3 gap=2 right_lyt>><weight=40 margin=5 gap=3 arrange=[variable,90,90] footer_lyt>");
 		caption("Form");
 		// items_tree
@@ -60,12 +64,12 @@ private:
 		toolbar.create(*this);
 		_place["left_lyt"] << toolbar;
 		toolbar.scale(21);
-		toolbar.append("Add item", nana::paint::image("icons/item_add.png"));
-		toolbar.append("Add separator", nana::paint::image("icons/sep_add.png"));
-		toolbar.append("Delete", nana::paint::image("icons/item_delete.png"));
+		toolbar.append("Add item", nana::paint::image(g_img_mgr.path(GUI_ITEM_ADD)));
+		toolbar.append("Add separator", nana::paint::image(g_img_mgr.path(GUI_SEP_ADD)));
+		toolbar.append("Delete", nana::paint::image(g_img_mgr.path(GUI_DELETE)));
 		toolbar.separate();
-		toolbar.append("Move up", nana::paint::image("icons/up.png"));
-		toolbar.append("Move down", nana::paint::image("icons/down.png"));
+		toolbar.append("Move up", nana::paint::image(g_img_mgr.path(GUI_UP)));
+		toolbar.append("Move down", nana::paint::image(g_img_mgr.path(GUI_DOWN)));
 		// panel1
 		panel1.create(*this);
 		panel1.transparent(true);

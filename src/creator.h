@@ -18,6 +18,8 @@
 #include <nana/gui/widgets/label.hpp>
 
 //<*includes
+#include "config.h"
+#include "imagemanager.h"
 #include "nana_extra/adi_place.hpp"
 //*>
 
@@ -47,6 +49,8 @@ public:
 private:
 	void init_()
 	{
+		extern imagemanager    g_img_mgr;
+
 		_place.div("vert arrange=[30,variable,24] _field_");
 		caption("Nana Creator");
 		bgcolor(nana::color(93,107,153));
@@ -55,23 +59,23 @@ private:
 		_place["_field_"] << _tb;
 		_tb.bgcolor(nana::color(204,213,240));
 		_tb.scale(21);
-		_tb.append("New project", nana::paint::image("icons/new_prj.png"));
-		_tb.append("Load project", nana::paint::image("icons/load_prj.png"));
-		_tb.append("Save project", nana::paint::image("icons/save.png"));
-		_tb.append("Save project as...", nana::paint::image("icons/save_as.png"));
+		_tb.append("New project", nana::paint::image(g_img_mgr.path(GUI_NEWPRJ)));
+		_tb.append("Load project", nana::paint::image(g_img_mgr.path(GUI_LOADPRJ)));
+		_tb.append("Save project", nana::paint::image(g_img_mgr.path(GUI_SAVE)));
+		_tb.append("Save project as...", nana::paint::image(g_img_mgr.path(GUI_SAVEAS)));
 		_tb.separate();
-		_tb.append("Generate code", nana::paint::image("icons/output.png")).textout(true);
+		_tb.append("Generate code", nana::paint::image(g_img_mgr.path(GUI_OUTPUT))).textout(true);
 		_tb.separate();
-		_tb.append("Delete current selection", nana::paint::image("icons/delete.png"));
+		_tb.append("Delete current selection", nana::paint::image(g_img_mgr.path(GUI_DELETE)));
 		_tb.separate();
-		_tb.append("Move up current selection", nana::paint::image("icons/up.png"));
-		_tb.append("Move down current selection", nana::paint::image("icons/down.png"));
+		_tb.append("Move up current selection", nana::paint::image(g_img_mgr.path(GUI_UP)));
+		_tb.append("Move down current selection", nana::paint::image(g_img_mgr.path(GUI_DOWN)));
 		_tb.separate();
-		_tb.append("Cut current selection", nana::paint::image("icons/cut.png"));
-		_tb.append("Copy current selection", nana::paint::image("icons/copy.png"));
-		_tb.append("Paste into/after current selection", nana::paint::image("icons/paste.png"));
+		_tb.append("Cut current selection", nana::paint::image(g_img_mgr.path(GUI_CUT)));
+		_tb.append("Copy current selection", nana::paint::image(g_img_mgr.path(GUI_COPY)));
+		_tb.append("Paste into/after current selection", nana::paint::image(g_img_mgr.path(GUI_PASTE)));
 		_tb.go_right();
-		_tb.append("Info...", nana::paint::image("icons/info.png")).textout(true);
+		_tb.append("Info...", nana::paint::image(g_img_mgr.path(GUI_PASTE))).textout(true);
 		// _adi_panel_margin
 		_adi_panel_margin.create(*this);
 		_adi_panel_margin_place.bind(_adi_panel_margin);

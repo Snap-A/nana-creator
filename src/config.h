@@ -58,6 +58,23 @@
 
 #define CTRL_CREATOR				"creator"
 
+// GUI menu icons
+#define GUI_NEWPRJ				"gnewprj"
+#define GUI_LOADPRJ				"gldprj"
+#define GUI_SAVE				"gsave"
+#define GUI_SAVEAS				"gsaveas"
+#define GUI_OUTPUT				"goutput"
+#define GUI_UP					"gup"
+#define GUI_DOWN				"gdown"
+#define GUI_DELETE				"gdelete"
+#define GUI_CUT					"gcut"
+#define GUI_COPY				"gcopy"
+#define GUI_PASTE				"gpaste"
+#define GUI_INFO				"ginfo"
+#define GUI_ITEM_ADD				"gtimeadd"
+#define GUI_SEP_ADD				"gsepadd"
+#define GUI_NC					"gnc"
+
 
 // project file
 //--------------------------------------------------------

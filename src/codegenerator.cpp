@@ -25,7 +25,11 @@
 #define DTOR_TAG			"dtor"
 #define DECLARATIONS_TAG	"declarations"
 
-
+#if defined(NANA_WINDOWS)
+#define P_SEP			"\\"
+#else
+#define P_SEP			"/"
+#endif
 
 codegenerator::codegenerator()
 {
@@ -45,11 +49,11 @@ bool codegenerator::generate(nana::window wd, tree_node<control_obj>* node, cons
 	if(path.empty())
 	{
 		// use current working dir
-		_filename = get_working_dir() + "\\" + _code_data.filename + ".h";
+		_filename = get_working_dir() + P_SEP + _code_data.filename + ".h";
 	}
 	else
 	{
-		_filename = path + "\\" + _code_data.filename + ".h";
+		_filename = path + P_SEP + _code_data.filename + ".h";
 	}
 
 	// check file

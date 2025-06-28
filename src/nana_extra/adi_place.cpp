@@ -416,7 +416,7 @@ namespace nana
 
 				rectangle r{ pos() + move_pos, size() };
 				container_.reset(new form(host_window_, r.pare_off(-1), form::appear::bald<form::appear::sizable>()));
-				drawing dw(container_->handle());
+                                nana::drawing dw(container_->handle());
 				dw.draw([](paint::graphics& graph)
 					{
 						graph.rectangle(false, colors::coral);
@@ -1517,7 +1517,7 @@ namespace nana
 				if(dockposition::up == i->pos)
 				{
 					i->docker.reset(new form(window_handle, { static_cast<int>(host_size.width) / 2 - 16, 5, 32, 32 }, form::appear::bald<>()));
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_up(graph);
@@ -1526,7 +1526,7 @@ namespace nana
 				else if(dockposition::down == i->pos)
 				{
 					i->docker.reset(new form(window_handle, { static_cast<int>(host_size.width) / 2 - 16, static_cast<int>(host_size.height) - 32 - 5, 32, 32 }, form::appear::bald<>()));
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_down(graph);
@@ -1535,7 +1535,7 @@ namespace nana
 				else if(dockposition::left == i->pos)
 				{
 					i->docker.reset(new form(window_handle, { 5, static_cast<int>(host_size.height) / 2 - 16, 32, 32 }, form::appear::bald<>()));
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_left(graph);
@@ -1544,7 +1544,7 @@ namespace nana
 				else if(dockposition::right == i->pos)
 				{
 					i->docker.reset(new form(window_handle, { static_cast<int>(host_size.width) - 32 - 5, static_cast<int>(host_size.height) / 2 - 16, 32, 32 }, form::appear::bald<>()));
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_right(graph);
@@ -1587,7 +1587,7 @@ namespace nana
 					auto pos = point(x - 16, y - 16 - 32);
 					i->docker.reset(new form(window_handle, { pos.x, pos.y, 32, 32 }, form::appear::bald<>()));
 					i->delta = i->docker->pos() - pos;
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_up(graph);
@@ -1598,7 +1598,7 @@ namespace nana
 					auto pos = point(x - 16, y + 16);
 					i->docker.reset(new form(window_handle, { pos.x, pos.y, 32, 32 }, form::appear::bald<>()));
 					i->delta = i->docker->pos() - pos;
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_down(graph);
@@ -1609,7 +1609,7 @@ namespace nana
 					auto pos = point(x - 16 - 32, y - 16);
 					i->docker.reset(new form(window_handle, { pos.x, pos.y, 32, 32 }, form::appear::bald<>()));
 					i->delta = i->docker->pos() - pos;
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_left(graph);
@@ -1620,7 +1620,7 @@ namespace nana
 					auto pos = point(x + 16, y - 16);
 					i->docker.reset(new form(window_handle, { pos.x, pos.y, 32, 32 }, form::appear::bald<>()));
 					i->delta = i->docker->pos() - pos;
-					drawing dw(i->docker->handle());
+					nana::drawing dw(i->docker->handle());
 					dw.draw([](paint::graphics& graph)
 						{
 							adi_place_parts::_indicator_right(graph);

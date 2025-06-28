@@ -3,6 +3,7 @@ project(nana-creator)
 
 option(NANA_CMAKE_ENABLE_PNG "Enable the use of PNG" ON)
 option(NANA_CMAKE_ENABLE_JPEG "Enable the use of JPEG" ON)
+option(NANA_CMAKE_DRAWING_REMOVED "Do not use removed 'drawing'" OFF)
 
 #SET Default build type:
 set(default_build_type "Release")
@@ -18,6 +19,12 @@ endif()
 #Define C++ standard:
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Extra define
+if (${NANA_CMAKE_DRAWING_REMOVED})
+  message(STATUS "Add flag indicating 'drawing' deprecation.")
+  add_compile_definitions(NANA_DRAWING_REMOVED)
+endif()
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/build/cmake)
 
@@ -45,15 +52,21 @@ if(UNIX)
         X11::Xft
         X11::Xcursor
         fontconfig
+        stdc++fs
+        png
+        jpeg
+        Threads::Threads
         )
 endif()
 
-list(APPEND common_dep
-    stdc++fs
-    png
-    jpeg
-    Threads::Threads
+if(WIN32)
+    list(APPEND 
+        common_dep
+        Threads::Threads
     )
+endif()
+
+link_directories(libs/)
 
 add_executable(${PROJECT_NAME}
     libs/pugixml/pugixml.cpp
@@ -78,7 +91,7 @@ add_executable(${PROJECT_NAME}
     src/ctrls/box_model.cpp
     src/ctrls/progress.cpp
     src/ctrls/menubar.cpp
-    src/items_dialog.cpp
+    src/itemseditorpanel.cpp
     src/nana_extra/adi_place.cpp
     src/ctrls/panel.cpp
     src/ctrls/checkbox.cpp
@@ -105,6 +118,8 @@ add_executable(${PROJECT_NAME}
     src/ctrls/group.cpp
     src/inifile.cpp
     src/ctrls/page.cpp
+    src/updater.cpp
+    src/options.cpp
     )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
@@ -117,12 +132,12 @@ target_link_libraries(${PROJECT_NAME} ${common_dep})
 
 add_executable(test-ctrls
     tests/ctrls/main.cpp
-    tests/ctrls/ctrls.ncp
     tests/ctrls/ctrls.h
     )
 
 list(REMOVE_ITEM common_dep png jpeg)
 target_link_libraries(test-ctrls ${common_dep})
+target_include_directories(test-ctrls PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs)
 
 add_test(NAME test-ctrls COMMAND test-ctrls)
 

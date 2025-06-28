@@ -63,6 +63,8 @@
 #define GUI_OUTPUT				"goutput"
 #define GUI_UP					"gup"
 #define GUI_DOWN				"gdown"
+#define GUI_UNDO				"gundo"
+#define GUI_REDO				"gredo"
 #define GUI_DELETE				"gdelete"
 #define GUI_CUT					"gcut"
 #define GUI_COPY				"gcopy"
@@ -70,7 +72,9 @@
 #define GUI_INFO				"ginfo"
 #define GUI_ITEM_ADD				"gtimeadd"
 #define GUI_SEP_ADD				"gsepadd"
+#define GUI_SETTINGS				"gsettings"
 #define GUI_NC					"gnc"
+#define GUI_INTO				"ginto"
 
 
 // project file

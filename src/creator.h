@@ -54,7 +54,7 @@ private:
 		place_.bind(*this);
 		place_.div("vert arrange=[36,variable,24] _field_");
 		caption("Nana Creator");
-		icon(nana::paint::image("icons/creator.ico"));
+		icon(nana::paint::image(g_img_mgr.path(CTRL_CREATOR)));
 		bgcolor(nana::color(93,107,153));
 		// _tb
 		_tb.create(*this);
@@ -66,26 +66,26 @@ private:
 		_tb.append(nana::toolbar::tools::button, "Save project", nana::paint::image(g_mgr_mgr.path(GUI_SAVE)));
 		_tb.append(nana::toolbar::tools::button, "Save project as...", nana::paint::image(g_mgr_img(GUI_SAVEAS));
 		_tb.append_separator();
-		_tb.append(nana::toolbar::tools::button, "Undo", nana::paint::image("icons/undo.png"));
-		_tb.append(nana::toolbar::tools::button, "Redo", nana::paint::image("icons/redo.png"));
+		_tb.append(nana::toolbar::tools::button, "Undo", nana::paint::image(g_mgr_img(GUI_UNDO)));
+		_tb.append(nana::toolbar::tools::button, "Redo", nana::paint::image(g_mgr_img(GUI_REDO)));
 		_tb.append_separator();
 		_tb.append(nana::toolbar::tools::button, "Generate code", nana::paint::image(g_img_mgr.path(GUI_OUTPUT))).textout(true);
 		_tb.append_separator();
 		_tb.append(nana::toolbar::tools::button, "Delete current selection", nana::paint::image(g_img_mgr.path(GUI_DELETE)));
 		_tb.append_separator();
-		_tb.append(nana::toolbar::tools::button, "Move up current selection", nana::paint::image("icons/up.png"));
-		_tb.append(nana::toolbar::tools::button, "Move down current selection", nana::paint::image("icons/down.png"));
-		auto ip__tb_14 = _tb.append(nana::toolbar::tools::dropdown, "Move into", nana::paint::image("icons/into.png")).textout(true);
-		ip__tb_14.dropdown_append("field", nana::paint::image("icons/horizontal_layout.png"));
-		ip__tb_14.dropdown_append("grid", nana::paint::image("icons/grid_layout.png"));
-		ip__tb_14.dropdown_append("panel", nana::paint::image("icons/panel.png"));
+		_tb.append(nana::toolbar::tools::button, "Move up current selection", nana::paint::image(g_img_mgr.path(GUI_UP)));
+		_tb.append(nana::toolbar::tools::button, "Move down current selection", nana::paint::image(g_img_mgr.path(GUI_DOWN)));
+		auto ip__tb_14 = _tb.append(nana::toolbar::tools::dropdown, "Move into", nana::paint::image(g_img_mgr.path(CTRL_INTO))).textout(true);
+		ip__tb_14.dropdown_append("field", nana::paint::image(g_img_mgr.path(CTRL_FIELD)));
+		ip__tb_14.dropdown_append("grid", nana::paint::image(g_img_mgr.path(CTRL_GRID)));
+		ip__tb_14.dropdown_append("panel", nana::paint::image(g_img_mgr.path(CTRL_PANEL)));
 		_tb.append_separator();
-		_tb.append(nana::toolbar::tools::button, "Cut current selection", nana::paint::image("icons/cut.png"));
-		_tb.append(nana::toolbar::tools::button, "Copy current selection", nana::paint::image("icons/copy.png"));
-		_tb.append(nana::toolbar::tools::button, "Paste into/after current selection", nana::paint::image("icons/paste.png"));
+		_tb.append(nana::toolbar::tools::button, "Cut current selection", nana::paint::image(g_img_mgr.path(GUI_CUT)));
+		_tb.append(nana::toolbar::tools::button, "Copy current selection", nana::paint::image(g_img_mgr.path(GUI_COPY)));
+		_tb.append(nana::toolbar::tools::button, "Paste into/after current selection", nana::paint::image(g_img_mgr.path(GUI_PASTE)));
 		_tb.go_right();
-		_tb.append(nana::toolbar::tools::button, "Options", nana::paint::image("icons/settings.png"));
-		_tb.append(nana::toolbar::tools::button, "Info", nana::paint::image("icons/info.png"));
+		_tb.append(nana::toolbar::tools::button, "Options", nana::paint::image(g_img_mgr.path(GUI_SETTINGS)));
+		_tb.append(nana::toolbar::tools::button, "Info", nana::paint::image(g_img_mgr.path(GUI_INFO)));
 		// _adi_panel_margin
 		_adi_panel_margin.create(*this);
 		_adi_panel_margin_place_.bind(_adi_panel_margin);

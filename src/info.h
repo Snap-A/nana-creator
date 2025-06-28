@@ -56,7 +56,7 @@ private:
 		place_.bind(*this);
 		place_.div("vert <weight=150 arrange=[50%,variable] field1><vert weight=30 margin=5 gap=2 arrange=[20] field2><grid=[5,6] margin=[5,10,5,10] collapse(1,0,4,1) collapse(1,1,4,1) collapse(0,2,5,4) grid1><weight=36 margin=[0,10,10,10] gap=2 arrange=[variable,90] field3>");
 		caption("About Nana Creator");
-		icon(nana::paint::image("icons/creator.ico"));
+		icon(nana::paint::image(g_img_mgr.path(CTRL_CREATOR)));
 		bgcolor(nana::color(204,213,240));
 		// picture1
 		picture1.create(*this);

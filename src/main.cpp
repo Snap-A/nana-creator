@@ -67,6 +67,8 @@ inifile		g_inifile;
         g_img_mgr.add(GUI_LOADPRJ, "icons/load_prj.png");
         g_img_mgr.add(GUI_SAVE, "icons/save.png");
         g_img_mgr.add(GUI_SAVEAS, "icons/save_as.png");
+        g_img_mgr.add(GUI_UNDO, "icons/undo.png");
+        g_img_mgr.add(GUI_REDO, "icons/redo.png");
         g_img_mgr.add(GUI_OUTPUT, "icons/output.png");
         g_img_mgr.add(GUI_UP, "icons/up.png");
         g_img_mgr.add(GUI_DOWN, "icons/down.png");
@@ -77,7 +79,9 @@ inifile		g_inifile;
         g_img_mgr.add(GUI_INFO, "icons/info.png");
         g_img_mgr.add(GUI_ITEM_ADD, "icons/item_add.png");
         g_img_mgr.add(GUI_SEP_ADD, "icons/sep_add.png");
+        g_img_mgr.add(GUI_SETTINGS, "icons/settings.png");
         g_img_mgr.add(GUI_NC, "icons/nc.png");
+        g_img_mgr.add(GUI_INTO, "icons/into.png");
 
         for (int i=0; i < 4; ++i) {
 		std::string test_base = BASE[i];

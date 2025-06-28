@@ -62,12 +62,12 @@ private:
 		_tb.bgcolor(nana::color(204,213,240));
 		_tb.tools_height(26);
 		_tb.append(nana::toolbar::tools::button, "New project", nana::paint::image(g_img_mgr.path(GUI_NEWPRJ)));
-		_tb.append(nana::toolbar::tools::button, "Load project", nana::paint::image(g_img_mgr.path(GUI_LOADPRJ));
-		_tb.append(nana::toolbar::tools::button, "Save project", nana::paint::image(g_mgr_mgr.path(GUI_SAVE)));
-		_tb.append(nana::toolbar::tools::button, "Save project as...", nana::paint::image(g_mgr_img(GUI_SAVEAS));
+		_tb.append(nana::toolbar::tools::button, "Load project", nana::paint::image(g_img_mgr.path(GUI_LOADPRJ)));
+		_tb.append(nana::toolbar::tools::button, "Save project", nana::paint::image(g_img_mgr.path(GUI_SAVE)));
+		_tb.append(nana::toolbar::tools::button, "Save project as...", nana::paint::image(g_img_mgr.path(GUI_SAVEAS)));
 		_tb.append_separator();
-		_tb.append(nana::toolbar::tools::button, "Undo", nana::paint::image(g_mgr_img(GUI_UNDO)));
-		_tb.append(nana::toolbar::tools::button, "Redo", nana::paint::image(g_mgr_img(GUI_REDO)));
+		_tb.append(nana::toolbar::tools::button, "Undo", nana::paint::image(g_img_mgr.path(GUI_UNDO)));
+		_tb.append(nana::toolbar::tools::button, "Redo", nana::paint::image(g_img_mgr.path(GUI_REDO)));
 		_tb.append_separator();
 		_tb.append(nana::toolbar::tools::button, "Generate code", nana::paint::image(g_img_mgr.path(GUI_OUTPUT))).textout(true);
 		_tb.append_separator();
@@ -75,7 +75,7 @@ private:
 		_tb.append_separator();
 		_tb.append(nana::toolbar::tools::button, "Move up current selection", nana::paint::image(g_img_mgr.path(GUI_UP)));
 		_tb.append(nana::toolbar::tools::button, "Move down current selection", nana::paint::image(g_img_mgr.path(GUI_DOWN)));
-		auto ip__tb_14 = _tb.append(nana::toolbar::tools::dropdown, "Move into", nana::paint::image(g_img_mgr.path(CTRL_INTO))).textout(true);
+		auto ip__tb_14 = _tb.append(nana::toolbar::tools::dropdown, "Move into", nana::paint::image(g_img_mgr.path(GUI_INTO))).textout(true);
 		ip__tb_14.dropdown_append("field", nana::paint::image(g_img_mgr.path(CTRL_FIELD)));
 		ip__tb_14.dropdown_append("grid", nana::paint::image(g_img_mgr.path(CTRL_GRID)));
 		ip__tb_14.dropdown_append("panel", nana::paint::image(g_img_mgr.path(CTRL_PANEL)));
